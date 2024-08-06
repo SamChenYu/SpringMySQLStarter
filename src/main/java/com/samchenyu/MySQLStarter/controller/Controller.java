@@ -9,6 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+/*
+    * This is a controller class that handles all the HTTP requests.
+    * It defines the endpoints for the API.
+    * The controller class interacts with the repository to process the requests.
+    *
+ */
+
+
 @RestController
 @RequestMapping("/students")
 public class Controller {
