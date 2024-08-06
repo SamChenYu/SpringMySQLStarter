@@ -15,10 +15,10 @@ Run the Application: Start the Spring Boot application using your preferred meth
 Access Endpoints: Use the REST endpoints provided by the controller to interact with the Student records. The base URL for the API is /students.
 
 ## Example Endpoints
-Get All Students: GET /students
-Get Student by ID: GET /students/{id}
-Create Student: POST /students
-Update Student: PUT /students/{id}
+Get All Students: GET /students  
+Get Student by ID: GET /students/{id}  
+Create Student: POST /students  
+Update Student: PUT /students/{id}  
 
 
 ## Dependencies:
