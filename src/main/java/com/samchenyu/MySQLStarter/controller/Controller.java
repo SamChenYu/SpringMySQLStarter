@@ -29,6 +29,11 @@ public class Controller {
         return studentRepository.findAll();
     }
 
+    /*
+        Postman Endpoint:
+        GET http://localhost:8080/students/all
+     */
+
     @GetMapping("/{id}")
     public ResponseEntity<Student> getStudentById(@PathVariable int id) {
         Optional<Student> student = studentRepository.findById(id);
@@ -36,11 +41,25 @@ public class Controller {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    /*
+        Postman Endpoint:
+        GET http://localhost:8080/students/1
+    */
+
     @PostMapping("/create")
     public Student createStudent(@RequestBody Student student) {
         return studentRepository.save(student);
     }
+    /*
+        Postman Endpoint:
+        POST http://localhost:8080/students/create
+        {
+          "id": 1,
+          "mark": 85,
+          "name": "John Doe"
+        }
 
+     */
 
     @PutMapping("/{id}")
     public ResponseEntity<Student> updateStudent(@PathVariable int id, @RequestBody Student studentDetails) {
@@ -55,6 +74,16 @@ public class Controller {
         }
     }
 
+    /*
+        Postman Endpoint:
+        PUT http://localhost:8080/students/1
+        {
+          "id": 1,
+          "mark": 90,
+          "name": "John Doe"
+        }
+     */
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteStudent(@PathVariable int id) {
         if (studentRepository.existsById(id)) {
@@ -64,4 +93,9 @@ public class Controller {
             return ResponseEntity.notFound().build();
         }
     }
+
+    /*
+        Postman Endpoint:
+        DELETE http://localhost:8080/students/1
+     */
 }
